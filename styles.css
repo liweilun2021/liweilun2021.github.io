@@ -119,7 +119,7 @@ a { color: var(--accent); }
 .when { color: var(--muted); font-size: 14px; margin: 0 0 2px; }
 .what { font-weight: 600; margin: 0 0 4px; }
 
-.company {
+.site-link {
   color: inherit;
   text-decoration: none;
   background-image: linear-gradient(currentColor, currentColor);
@@ -129,11 +129,11 @@ a { color: var(--accent); }
   transition: background-size 200ms ease, color 200ms ease;
 }
 
-.company:hover { color: var(--accent); background-size: 100% 1px; }
-.company:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.site-link:hover { color: var(--accent); background-size: 100% 1px; }
+.site-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
 @media (prefers-reduced-motion: reduce) {
-  .company { transition: none; }
+  .site-link { transition: none; }
 }
 
 footer {
