@@ -64,16 +64,9 @@ h1 {
   letter-spacing: -0.01em;
 }
 
-.tagline {
-  margin: 0 0 8px;
-  color: var(--muted);
-  font-size: 15px;
-}
-
 .links { margin: 0; font-size: 15px; }
 .links a { color: var(--accent); text-decoration: none; }
 .links a:hover { text-decoration: underline; }
-.sep { color: var(--line); margin: 0 8px; }
 
 /* sections */
 section { padding-top: 32px; }
