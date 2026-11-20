@@ -1,123 +1,200 @@
 :root {
-  --bg: #ffffff;
-  --fg: #1a1a1a;
-  --muted: #666;
-  --line: #e5e5e5;
+  --paper: #f4f1eb;
+  --ink: #181816;
+  --muted: #6d6a64;
+  --line: #c9c4ba;
   --accent: #0a66c2;
-  --chip: #f3f4f6;
+  --chip: #e7e2d9;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #16181d;
-    --fg: #e8e8e8;
-    --muted: #9aa0a6;
-    --line: #2c2f36;
+    --paper: #151513;
+    --ink: #eeeae2;
+    --muted: #aaa59b;
+    --line: #3d3a34;
     --accent: #6cb6ff;
-    --chip: #23262d;
+    --chip: #292722;
   }
 }
 
 * { box-sizing: border-box; }
-
 html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  padding: 56px 24px 72px;
-  background: var(--bg);
-  color: var(--fg);
-  font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }
 
-main {
-  max-width: 760px;
-  margin: 0 auto;
-}
+main { margin: 0; }
+p { margin: 0 0 10px; }
+a { color: var(--accent); }
 
-/* hero */
+/* Magazine cover */
 .hero {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  padding-bottom: 28px;
-  border-bottom: 1px solid var(--line);
+  position: relative;
+  isolation: isolate;
+  height: min(860px, 92svh);
+  min-height: 620px;
+  overflow: hidden;
+  background: #171715;
+  color: #fff;
 }
 
-.avatar {
-  flex: 0 0 64px;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgb(0 0 0 / 48%) 0%, transparent 32%, transparent 48%, rgb(0 0 0 / 78%) 100%);
+}
+
+.cover-photo {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  background: var(--chip);
+  object-position: 68% 50%;
+  filter: grayscale(78%) contrast(1.08);
+}
+
+.cover-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 30px 40px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .2em;
+}
+
+.cover-top p { margin: 0; }
+
+.cover-title {
+  position: absolute;
+  right: 40px;
+  bottom: 36px;
+  left: 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
 }
 
 h1 {
-  margin: 0 0 4px;
-  font-size: 28px;
-  letter-spacing: -0.01em;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(72px, 12vw, 170px);
+  font-weight: 400;
+  line-height: .82;
+  letter-spacing: -.065em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.links { margin: 0; font-size: 15px; }
-.links a { color: var(--accent); text-decoration: none; }
-.links a:hover { text-decoration: underline; }
+.cover-contact {
+  flex: 0 0 auto;
+  padding-bottom: 6px;
+  text-align: right;
+}
 
-/* sections */
-section { padding-top: 32px; }
+.links { margin: 0; font-size: 13px; }
+.hero .links a { color: inherit; text-decoration: none; }
+.hero .links a:hover { text-decoration: underline; }
+
+/* Editorial body */
+main > section,
+main > footer {
+  width: min(1120px, calc(100% - 80px));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+main > section { padding-top: 56px; }
 
 h2 {
-  margin: 0 0 16px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  margin: 0 0 28px;
+  padding-top: 12px;
+  border-top: 2px solid var(--ink);
   color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
 }
 
-p { margin: 0 0 10px; }
+.about { padding-top: 64px !important; }
+.about > p {
+  max-width: 1050px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1.35;
+  letter-spacing: -.025em;
+}
 
 .country-inline { white-space: nowrap; }
-
 .flags {
   display: inline-flex;
   flex-wrap: nowrap;
-  gap: 2px;
-  margin-left: 3px;
-  font-size: 14px;
+  gap: 3px;
+  margin-left: 4px;
+  font-size: .5em;
   line-height: 1;
+  vertical-align: middle;
 }
 
-a { color: var(--accent); }
-
-/* timeline */
+/* Experience and education */
 .timeline {
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .timeline li {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  padding-bottom: 24px;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
 }
 
-.timeline li:last-child { padding-bottom: 0; }
+.timeline li:last-child { border-bottom: 1px solid var(--line); }
 
 .logo {
-  flex: 0 0 32px;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   margin-top: 2px;
-  border-radius: 8px;
+  border-radius: 3px;
   object-fit: contain;
   background: var(--chip);
+  filter: grayscale(100%);
 }
 
-.when { color: var(--muted); font-size: 14px; margin: 0 0 2px; }
-.what { font-weight: 600; margin: 0 0 4px; }
+.when {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.what {
+  margin: 0 0 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(21px, 2.3vw, 28px);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -.015em;
+}
+
+.timeline li p:last-child { max-width: 82ch; margin-bottom: 0; }
 
 .site-link {
   color: inherit;
@@ -133,28 +210,47 @@ a { color: var(--accent); }
 }
 
 footer {
-  margin-top: 48px;
-  padding-top: 20px;
+  margin-top: 64px !important;
+  padding: 22px 0 42px;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 13px;
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+footer p { margin: 0; }
+footer a { color: inherit; }
+
+@media (max-width: 700px) {
+  .hero { height: 78svh; min-height: 560px; max-height: 720px; }
+  .cover-top { padding: 22px 20px; font-size: 9px; }
+  .cover-title { right: 20px; bottom: 24px; left: 20px; display: block; }
+  h1 { font-size: 24vw; white-space: normal; }
+  .cover-contact { margin-top: 24px; padding: 0; text-align: left; }
+  main > section,
+  main > footer { width: calc(100% - 40px); }
+  main > section { padding-top: 42px; }
+  .about { padding-top: 48px !important; }
+  .about > p { font-size: 24px; }
+  .timeline li { grid-template-columns: 32px minmax(0, 1fr); gap: 14px; padding: 22px 0; }
+  .logo { width: 32px; height: 32px; }
+  .what { font-size: 22px; }
 }
 
-footer a { color: var(--muted); }
-
-/* print */
+/* Print keeps the content and drops the photographic cover treatment. */
 @media print {
-  :root { --bg: #fff; --fg: #000; --muted: #555; --line: #ccc; --accent: #000; --chip: #f2f2f2; }
-  body { padding: 0; font-size: 12pt; }
-  .hero { padding-bottom: 16px; }
-  section { padding-top: 18px; break-inside: avoid; }
-  .timeline li { break-inside: avoid; }
+  :root { --paper: #fff; --ink: #000; --muted: #555; --line: #ccc; --accent: #000; --chip: #f2f2f2; }
+  body { font-size: 11pt; }
+  .hero { height: auto; min-height: 0; padding: 0 0 18px; background: none; color: #000; }
+  .hero::after, .cover-photo, .cover-top { display: none; }
+  .cover-title { position: static; display: block; }
+  h1 { color: #000; font-size: 32pt; white-space: nowrap; }
+  .cover-contact { margin-top: 10px; text-align: left; }
+  .hero .links a { color: #000; }
+  main > section, main > footer { width: 100%; }
+  main > section { padding-top: 20px; }
+  .about { padding-top: 20px !important; }
+  .about > p { font-size: 16pt; }
+  section, .timeline li { break-inside: avoid; }
   a { text-decoration: none; }
-}
-
-@media (max-width: 520px) {
-  body { padding: 36px 18px 56px; }
-  .hero { gap: 14px; }
-  .avatar { flex-basis: 52px; width: 52px; height: 52px; font-size: 21px; }
-  h1 { font-size: 24px; }
 }
