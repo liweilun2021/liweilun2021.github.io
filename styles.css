@@ -50,12 +50,8 @@ main {
   width: 64px;
   height: 64px;
   border-radius: 50%;
+  object-fit: cover;
   background: var(--chip);
-  color: var(--muted);
-  display: grid;
-  place-items: center;
-  font-size: 26px;
-  font-weight: 600;
 }
 
 h1 {
@@ -81,12 +77,14 @@ h2 {
 
 p { margin: 0 0 10px; }
 
+.country-inline { white-space: nowrap; }
+
 .flags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 12px 0;
-  font-size: 22px;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  margin-left: 3px;
+  font-size: 14px;
   line-height: 1;
 }
 
