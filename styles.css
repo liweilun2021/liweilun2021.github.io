@@ -90,40 +90,6 @@ p { margin: 0 0 10px; }
 
 a { color: var(--accent); }
 
-/* skills */
-.tags {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 0;
-  padding: 0;
-}
-
-.tags li {
-  padding: 3px 10px;
-  border-radius: 999px;
-  background: var(--chip);
-  font-size: 14px;
-}
-
-/* projects */
-.project { margin-bottom: 22px; }
-
-.project h3 {
-  margin: 0 0 4px;
-  font-size: 17px;
-}
-
-.project h3 a { text-decoration: none; }
-.project h3 a:hover { text-decoration: underline; }
-
-.meta {
-  color: var(--muted);
-  font-size: 14px;
-  margin: 0;
-}
-
 /* timeline */
 .timeline {
   list-style: none;
@@ -173,7 +139,7 @@ footer a { color: var(--muted); }
   body { padding: 0; font-size: 12pt; }
   .hero { padding-bottom: 16px; }
   section { padding-top: 18px; break-inside: avoid; }
-  .project, .timeline li { break-inside: avoid; }
+  .timeline li { break-inside: avoid; }
   a { text-decoration: none; }
 }
 
