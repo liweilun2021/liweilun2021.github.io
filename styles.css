@@ -234,7 +234,8 @@ footer a { color: inherit; }
   .experience { grid-column: 2; grid-row: 2 / 4; padding-top: 28px; }
   .education { grid-column: 1; grid-row: 3; padding-top: 28px; }
   h2 { margin-bottom: 14px; }
-  .about > p { font-size: 22px; }
+  .about > p { font-size: 12px; line-height: 1.45; }
+  .about .flags { font-size: 12px; }
   .timeline li { grid-template-columns: 28px minmax(0, 1fr); gap: 12px; padding: 12px 0; }
   .logo { width: 28px; height: 28px; }
   .when { margin-bottom: 4px; font-size: 9px; }
