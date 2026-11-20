@@ -81,6 +81,15 @@ h2 {
 
 p { margin: 0 0 10px; }
 
+.flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+  font-size: 22px;
+  line-height: 1;
+}
+
 a { color: var(--accent); }
 
 /* timeline */
