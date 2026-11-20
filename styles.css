@@ -226,8 +226,8 @@ footer a { color: inherit; }
   main > footer { width: auto; margin: 0; }
   .about { grid-column: 1; grid-row: 2; padding-top: 28px !important; }
   .experience { grid-column: 2; grid-row: 2 / 5; padding-top: 28px; }
-  .education { grid-column: 1; grid-row: 3; padding-top: 28px; }
-  .contact { grid-column: 1; grid-row: 4; padding-top: 28px; }
+  .education { grid-column: 1; grid-row: 4; padding-top: 28px; }
+  .contact { grid-column: 1; grid-row: 3; padding-top: 28px; }
   h2 { margin-bottom: 14px; }
   .about > p { font-size: 14px; line-height: 1.45; }
   .about .flags { font-size: 14px; }
